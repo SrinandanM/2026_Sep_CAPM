@@ -1,0 +1,364 @@
+###
+GET http://localhost:4004/odata/v4/catalog
+
+//To count the number of Employees
+###
+GET http://localhost:4004/odata/v4/catalog/ProductSrv/$count
+
+//GET top 10 Products
+###
+GET http://localhost:4004/odata/v4/catalog/ProductSrv?$top=10
+
+//Get top 10 after u skip first 10 ie., it is 11 to 21
+###
+GET http://localhost:4004/odata/v4/catalog/ProductSrv?$top=10&$skip=10
+
+//Select the products where CATEGORY = 'Notebooks' AND DIM_UNIT = 'CM'
+###
+GET http://localhost:4004/odata/v4/catalog/ProductSrv?$filter=CATEGORY eq 'Notebooks'&DIM_UNIT eq 'CM'
+
+//Returns PRODUCT_ID DESCRIPTION CATEGORY PRICE from Products
+###
+GET http://localhost:4004/odata/v4/catalog/ProductSrv?$select=PRODUCT_ID,DESCRIPTION,CATEGORY,PRICE
+
+//Display the Products in descending order based on PRODUCT_ID
+###
+GET http://localhost:4004/odata/v4/catalog/ProductSrv?$orderby=PRODUCT_ID desc
+
+//Verify the product which has a specific key exist
+###
+GET http://localhost:4004/odata/v4/catalog/ProductSrv('74867AD200E41EDBA5D8B06B26EB8052')/PRODUCT_ID
+
+//Display the value of the product with specific key
+###
+GET http://localhost:4004/odata/v4/catalog/ProductSrv('74867AD200E41EDBA5D8B06B26EB8052')/PRODUCT_ID/$value
+
+//$expand fetches the related/associated entity data along with the main entity data in the same request.
+###
+GET http://localhost:4004/odata/v4/catalog/PurchaseOrderSrv?$expand=Items
+
+//Select all category names with their descriptions from the Categories table
+###
+GET http://localhost:4004/odata/v4/catalog/Category?$select=
+
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
+###
+GET https://services.odata.org/V4/Northwind/Northwind.svc/Customers
+
+//Query 1
+###
+GET https://services.odata.org/V4/Northwind/Northwind.svc/Categories?$select=CategoryName,Description
+
+//Query 2
+###
+GET https://services.odata.org/V4/Northwind/Northwind.svc/Customers?$select=ContactName,CustomerID,CompanyName&$filter=City eq 'London'
+
+//Query 3
+###
+GET https://services.odata.org/V4/Northwind/Northwind.svc/Suppliers?$filter=Fax ne null
+
+//Query 4
+###
+GET https://services.odata.org/V4/Northwind/Northwind.svc/Orders?$select=CustomerID&$filter=RequiredDate ge 1997-01-01T00:00:00Z and RequiredDate le 1998-01-01T00:00:00Z and Freight lt 100
+
+//Query 5
+###
+GET https://services.odata.org/V4/Northwind/Northwind.svc/Customers?$select=CompanyName,ContactName&$filter=ContactTitle eq 'Owner' and (Country eq 'Mexico' or Country eq 'Sweden' or Country eq 'Germany')
+
+//Query 6
+###
+GET https://services.odata.org/V4/Northwind/Northwind.svc/Products/$count?$filter=Discontinued eq true
+
+###
+GET https://services.odata.org/V4/Northwind/Northwind.svc/Categories
+
+
+//Query 7
+###
+GET https://services.odata.org/V4/Northwind/Northwind.svc/Categories?$select=CategoryName,Description&$filter=startswith(CategoryName,'Co')
+
+//Query 8
+###
+GET https://services.odata.org/V4/Northwind/Northwind.svc/Suppliers?$select=CompanyName,City,Country,PostalCode&$filter=contains(Address, 'rue')&$orderby=CompanyName asc
+
+//Query 9
+###
+GET https://services.odata.org/V4/Northwind/Northwind.svc/Order_Details?$apply=groupby((ProductID),aggregate(Quantity with sum as TotalQuantity))
+
+//Query 10
+###
+GET https://services.odata.org/V4/Northwind/Northwind.svc/Customers?$select=CompanyName,Address&$expand=Orders($expand=Shipper($filter=CompanyName eq 'Speedy Express'))
+
+//Query 11
+###
+GET https://services.odata.org/V4/Northwind/Northwind.svc   
+//Select a list of Suppliers containing company name, contact name, contact title and region description.
+
+//Querty 13
+###
+GET https://services.odata.org/V4/Northwind/Northwind.svc/Products_by_Categories?$select=ProductName&$filter=CategoryName eq 'Condiments'
+
+
+//8. Select a list of customer names who have no orders in the Orders table.
+###
+GET https://services.odata.org/V4/Northwind/Northwind.svc/Customers?$select=CompanyName&$filter=not Orders/any()
+
+
+//Select a complete list of company names from the Shippers table. Include freight totals rounded to the nearest whole number for each shipper from the Orders table for those shippers with orders.
+###
+GET https://services.odata.org/V4/Northwind/Northwind.svc
+
+//Select all employee first and last names from the Employees table by combining the 2 columns aliased as 'DisplayName'. The combined format should be 'LastName, FirstName'.
+###
+GET https://services.odata.org/V4/Northwind/Northwind.svc
+
+###
+GET http://localhost:4004/odata/v4/catalog/PurchaseOrderSrv/74867AD200E41EDBA5D8B06885B04052/LargestOrder()
+
+
+
+###
+GET http://localhost:4004/odata/v4/catalog/EmployeeSrv
+
+###
+PUT http://localhost:4004/odata/v4/catalog/EmployeeSrv/46fc35d-be94-48d0-ae40-fd5f9bff9ee4
+Content-Type: application/json
+
+{
+    "salaryAmount" : "11110000.00",
+    "Currency_code" : "USD"
+}
+
+###
+GET http://localhost:4004/odata/v4/catalog/EmployeeSrv
+
+###
+PUT http://localhost:4004/odata/v4/catalog/EmployeeSrv
+Content-Type: application/json
+
+{
+      "ID": "02BD2137-097",
+      "phoneNumber": "+91 3874564865"
+
+
+}
+
+###
+GET http://localhost:4004/odata/v4/catalog/PurchaseItemSrv
+
+###
+PUT http://localhost:4004/odata/v4/catalog/PurchaseItemSrv
+Content-Type: application/json
+
+{
+      "NODE_KEY": "74867AD200E41ED35A0052",
+      "PO_ITEMS_POS": 11
+}
+###
+PUT http://localhost:4004/odata/v4/catalog/BusinessPartnerSrv
+Content-Type: application/json
+
+{
+      "Node_KEY": "74867AD200E41EDBA5D8B06885A56052",
+      "COMPANY_NAME": "SAP, SAP"
+}
+
+###
+GET http://localhost:4004/odata/v4/catalog/getHighestSalariedEmployees()
+
+###
+GET http://localhost:4004/odata/v4/catalog/getHighestPricedProduct()
+
+###
+POST http://localhost:4004/odata/v4/catalog/EmployeeSrv
+Content-Type: application/json
+
+{
+      "ID": "02BD2137-0890-1EEA-A6C2-BFB",
+      "Currency_code": "USD"
+
+}
+###
+PUT http://localhost:4004/odata/v4/catalog/AddressSrv
+Content-Type: application/json
+
+{
+    "NODE_KEY": "74867AD200E4",
+    "COUNTRY": "USA"
+
+
+}
+
+
+###
+PUT http://localhost:4004/odata/v4/catalog/ProductSrv/74867AD200E41EDBA5D8B06B26EB4052
+Content-Type: application/json
+
+{
+    "PRICE": "1200.00",
+    "CURRENCY_CODE": "EUR"
+
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+###
+POST http://localhost:4004/odata/v4/catalog/EmployeeSrv/02BD2137-0890-1EEA-A6C2-BB55C19787FB/increaseSalary
+
+### Top 20 Highest Paid Employees
+GET http://localhost:4004/odata/v4/catalog/EmployeeSrv/02BD2137-0890-1EEA-A6C2-BB55C19787FB/getTop20Employees()
+
+
+
+
+
+###
+GET http://localhost:4004/odata/v4/catalog/getUtilities()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+###
+GET http://localhost:4004/odata/v4/catalog-services/PublisherSrv
+
+###
+POST http://localhost:4004/odata/v4/catalog-services/UpdatePublisher
+Content-Type: application/json
+
+{
+    "Name": "ABCD",
+    "Phone": "IjjI"
+}
+
+###
+POST http://localhost:4004/odata/v4/catalog-services/CreatePublisher
+Content-Type: application/json
+
+{
+        "Name" : "ABCD",    
+        "Address" : "DDDDD",
+        "Phone" : "HHHHHH",
+        "URL" : "DGDUVDH"
+}
+###
+GET http://localhost:4004/odata/v4/catalog-services/BookSrv
+
+###
+POST http://localhost:4004/odata/v4/catalog-services/CreateBook
+Content-Type: application/json
+
+{
+    "ISBN" : "AAAAAA",
+    "Year" : "2026",
+    "Title" : "AAAAAAA",
+    "Price" : "1000.00",
+    "PublisherName" : "BBB",
+    "AuthorName" : "BBB",
+    "AuthorAddress" : "BBB"
+}
+
+###
+POST http://localhost:4004/odata/v4/CatalogService/createEmployee
+Content-Type: application/json
+
+{
+    "ID": "1234-ASDF"
+}
+
+###
+GET http://localhost:4004/odata/v4/CatalogService/EmployeeSrv

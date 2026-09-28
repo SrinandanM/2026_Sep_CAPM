@@ -1,0 +1,21 @@
+{
+  "name": "app1-cds",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "@sap/cds-dk": "^10.1.1"
+  },
+  "dependencies": {
+    "@cap-js/hana": "^3.1.1",
+    "@cap-js/sqlite": "^3.1.0",
+    "@sap/cds": "^10.1.0",
+    "@sap/xssec": "^4.15.0"
+  }
+}

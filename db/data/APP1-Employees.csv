@@ -1,0 +1,11 @@
+EmployeeId,EmployeeName,Salary,Department,Currency,City,Country,DivisionId_DivisionId
+1001,Aarav Sharma,65000,Engineering,INR,Bangalore,India,D101
+1002,Vihaan Reddy,72000,IT,INR,Hyderabad,India,D102
+1003,Ananya Gupta,68000,Finance,INR,Mumbai,India,D103
+1004,Ishita Verma,75000,HR,INR,Delhi,India,D104
+1005,Arjun Nair,82000,Marketing,INR,Kochi,India,D105
+1006,Priya Iyer,90000,Engineering,INR,Chennai,India,D10
+1007,Rohan Kapoor,78000,Operations,INR,Pune,India,D106
+1008,Sneha Patil,85000,Finance,INR,Nagpur,India,D103
+1009,Karan Mehta,70000,Sales,INR,Ahmedabad,India,D107
+1010,Kavya Singh,88000,IT,INR,Jaipur,India,D102

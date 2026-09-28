@@ -1,0 +1,11 @@
+BookId,parent_StudentId,BookName,Author,Price,Date_of_Issue,Date_of_Return
+1,12000,The Alchemist,Paulo Coelho,399,2026-08-01,2026-08-15
+2,24000,Atomic Habits,James Clear,550,2026-08-03,2026-08-17
+3,54000,Rich Dad Poor Dad,Robert Kiyosaki,450,2026-08-05,2026-08-19
+4,44000,Think and Grow Rich,Napoleon Hill,350,2026-08-07,2026-08-21
+5,88000,The Power of Habit,Charles Duhigg,499,2026-08-09,2026-08-23
+6,90909,Deep Work,Cal Newport,599,2026-08-11,2026-08-25
+7,12000,Ikigai,Hector Garcia,320,2026-08-13,2026-08-27
+8,24000,The Psychology of Money,Morgan Housel,475,2026-08-15,2026-08-29
+9,54000,Wings of Fire,A.P.J. Abdul Kalam,299,2026-08-17,2026-08-31
+10,44000,Do Epic Shit,Ankur Warikoo,399,2026-08-19,2026-09-02

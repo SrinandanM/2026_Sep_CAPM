@@ -1,0 +1,11 @@
+id,Title,Description,Privacy,UploadDate,View,ImagePath,AlbumId_ID,LocationId_Id,MemberId_Id
+1,Sunset View,Beautiful sunset near the beach,Public,2026-01-05,120,/images/sunset.jpg,A001,L001,1
+2,Mountain Trip,Amazing view from the mountains,Public,2026-01-12,95,/images/mountain.jpg,A001,L002,2
+3,City Lights,Night view of the city,Private,2026-02-01,80,/images/city.jpg,A002,L003,3
+4,Green Forest,Beautiful green forest scenery,Public,2026-02-15,150,/images/forest.jpg,A002,L004,4
+5,Beach Holiday,Memories from a beach holiday,Friends,2026-03-10,200,/images/beach.jpg,A003,L005,5
+6,Waterfall View,Natural waterfall surrounded by trees,Public,2026-04-18,175,/images/waterfall.jpg,A003,L006,6
+7,Temple Visit,Beautiful historic temple,Private,2026-05-10,110,/images/temple.jpg,A004,L007,7
+8,Lake View,Peaceful lake during the evening,Public,2026-06-20,140,/images/lake.jpg,A004,L008,8
+9,Flower Garden,Colorful flowers in the garden,Friends,2026-07-15,90,/images/flowers.jpg,A005,L009,9
+10,Rainy Day,Beautiful scenery during rainfall,Public,2026-08-22,160,/images/rain.jpg,A005,L010,10
