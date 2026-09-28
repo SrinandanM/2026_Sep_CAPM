@@ -5,6 +5,7 @@ using {Currency} from '@sap/cds/common';
  
 service CatalogService  {
 
+
     entity EmployeeSrv as projection on database.master.Employees {
         *
     } actions {
@@ -16,6 +17,7 @@ service CatalogService  {
     function getTop20Employees() returns array of EmployeeSrv;
 
 }; 
+
     entity ProductSrv as projection on database.master.Products;
  
     entity BusinessPartnerSrv as projection on database.master.BusinessPartners;
